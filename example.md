@@ -1,7 +1,5 @@
-package gopwn
 
-
-func Example(){
+```go
 	offset := Pad("A", 16)
 	payload := []byte{0x00,0x00,0x00,0x00,0x00}//shellcode
 	jmpEsp := p64(0xf7423322)
@@ -11,4 +9,4 @@ func Example(){
 	p := Process("./vuln")
 	p.Sendline(fPayload)
 	p.interactive()
-}
+```
