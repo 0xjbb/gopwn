@@ -29,3 +29,7 @@ func Pad(char string, n int) []byte{
 
 func p64(){}
 func p32(){}
+
+// merge several slices
+func merge(args ...interface{}){}
+
