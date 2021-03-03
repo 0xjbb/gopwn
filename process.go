@@ -21,7 +21,8 @@ func NewProcess(r io.Reader, w io.Writer) *AppProcess{
 
 
 func (ap *AppProcess) Recvline(){}
+func (ap *AppProcess) Sendline(data []byte){}
 
-func (ap *AppProcess) Write(){}
+func (ap *AppProcess) write(data []byte){}
 
 func (ap *AppProcess) interactive(){}
