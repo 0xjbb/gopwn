@@ -2,6 +2,7 @@ package gopwn
 
 import "os"
 
+
 func FileExists(FilePath string) bool{
 	data, err := os.Stat(FilePath)
 
@@ -11,3 +12,6 @@ func FileExists(FilePath string) bool{
 	// something exists, make sure its not a directory.
 	return !data.IsDir()
 }
+
+func p64(){}
+func p32(){}

@@ -8,6 +8,7 @@ import (
 )
 
 // connect to remote host.
+// Remote("127.0.0.1:3452")
 func Remote(address string) *AppProcess{
 	c, err := net.Dial("tcp", address)
 
@@ -18,6 +19,9 @@ func Remote(address string) *AppProcess{
 	return NewProcess(c,c)
 }
 
+
+// Local binary
+// Process("./vuln")
 func Process(binaryName string) *AppProcess{
 	if !FileExists(binaryName){
 		log.Fatalf("File %s dooesn't exist.", binaryName)
@@ -45,3 +49,5 @@ func Process(binaryName string) *AppProcess{
 
 	return NewProcess(io.MultiReader(stdout, stderr), stdin)
 }
+
+//func SSH(){}
