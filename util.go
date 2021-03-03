@@ -1,6 +1,10 @@
 package gopwn
 
-import "os"
+import (
+	"encoding/hex"
+	"os"
+	"strings"
+)
 
 
 func FileExists(FilePath string) bool{
@@ -11,6 +15,16 @@ func FileExists(FilePath string) bool{
 	}
 	// something exists, make sure its not a directory.
 	return !data.IsDir()
+}
+
+//Fix this, it's really fucked.
+func Pad(char string, n int) []byte{
+	// convert to hex.
+	padded := strings.Repeat(char, n)
+	dst := make([]byte, len(padded))
+
+	hex.Encode(dst, []byte(padded))
+	return dst
 }
 
 func p64(){}
